@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>BOOMER74</title>
+  </head>
+  <body>
+    <h1>Redirect to GitHub... <span id="timeout">5</span>s</h1>
+    <script type="application/javascript">
+      const timeout = document.getElementById('timeout');
+
+      let count = 4;
+
+      const redirect = () => {
+        setTimeout(() => {
+          timeout.innerText = count;
+
+          if (count === 0) {
+            window.location.href = 'https://github.com/BOOMER74';
+          } else {
+            count -= 1;
+
+            redirect();
+          }
+        }, 1000);
+      };
+
+      redirect();
+    </script>
+  </body>
+</html>
